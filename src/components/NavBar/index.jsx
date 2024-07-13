@@ -27,7 +27,6 @@ const NavBar = styled.nav`
 const Nav = () =>{
     return(
         <NavBar>
-            <GlobalStyles/>
             <img src="img/logo.png" alt="logo" />
             <div className=" btn-container">
                 <Button className="black" nombre = "home"/>

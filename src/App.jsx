@@ -1,15 +1,13 @@
-import Nav from "./components/NavBar"
-import Banner from "./components/Banner"
-import Main from "./components/Main"
-import Footer from "./components/Footer"
+import Home from "./pages/Home"
+import Form  from "./components/Form"
+
 
 function App() {
     return (
     <>
-      <Nav/>
-      <Banner/>
-      <Main/>
-      <Footer/>
+      <Home />
+      <Form/>
+      
     </>
   )
 }

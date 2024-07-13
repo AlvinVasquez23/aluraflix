@@ -13,6 +13,13 @@ const Btn = styled.button`
     color: #FFF;
     border: 2px solid #F5F5F5;
     background: var(--Dark-Grey);
+
+    /* &:active {
+    border-radius: 10px;
+    border: 2px solid var(--Blue);
+    background: rgba(0, 0, 0, 0.90);
+    box-shadow: 0px 0px 12px 4px #2271D1 inset;
+    } */
 `
 
 

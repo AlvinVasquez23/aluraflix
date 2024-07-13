@@ -25,7 +25,7 @@ const DivInfo = styled.div`
     color: var(--Grey-light);  
     background: var(--Front-End); 
     border-radius: 12px;
-    padding: 5px 0 0 25px;
+    padding: 5px 0 0 15px;
 
     }
 

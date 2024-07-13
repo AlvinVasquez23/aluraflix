@@ -5,7 +5,7 @@ import Information from "../Information"
 const DivBanner = styled.div`
     width: 100%;
     height: 600px   ;
-    background: url(/public/img/banner.png) lightgray 50% / cover no-repeat;;
+    background: url(/img/banner.png) lightgray 50% / cover no-repeat;;
     display: flex;
     justify-content: center;
     align-items: center;
