@@ -1,6 +1,7 @@
 import GlobalStyles from "../GlobalStyles"
 import styled from "styled-components"
 import Button from "../Boton"
+import { Link, useLocation } from "react-router-dom"
 
 
 const NavBar = styled.nav`
@@ -25,12 +26,17 @@ const NavBar = styled.nav`
 `
 
 const Nav = () =>{
+
+    const location = useLocation();
+
     return(
         <NavBar>
-            <img src="img/logo.png" alt="logo" />
+            <GlobalStyles/>
+            <Link to={"/Page404"}><img src="img/logo.png" alt="logo" /></Link>
             <div className=" btn-container">
-                <Button className="black" nombre = "home"/>
-                <Button className="white"nombre = "nuevo video"/>     
+                <Link to={"/"}><Button  nombre = "home" activo={location.pathname === '/'}/></Link>
+                <Link to={"/Modal"}><Button nombre = "nuevo video" activo={location.pathname === '/Modal'} /></Link>
+                     
             </div> 
                   
         </NavBar>

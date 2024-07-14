@@ -10,23 +10,18 @@ const Btn = styled.button`
     border-radius: 12px;
     text-transform: uppercase;
     cursor: pointer;  
-    color: #FFF;
-    border: 2px solid #F5F5F5;
-    background: var(--Dark-Grey);
+    
+    border:${({activo}) => (activo ? "2px solid var(--Blue)" : "2px solid #F5F5F5")};
+    background:${({activo}) => (activo ? "rgba(0, 0, 0, 0.90)" : "var(--Dark-Grey)")};
+    color:${({activo}) => (activo ? "var(--Blue)" : "#FFF")};
+    box-shadow:${({activo}) => (activo ? "0px 0px 12px 4px #2271D1 inset" : "none" )};
 
-    /* &:active {
-    border-radius: 10px;
-    border: 2px solid var(--Blue);
-    background: rgba(0, 0, 0, 0.90);
-    box-shadow: 0px 0px 12px 4px #2271D1 inset;
-    } */
 `
 
-
-const Button = (props)=> {
+const Button = ({nombre, activo=false})=> {
     return(
-        <Btn className={props.className}>
-            {props.nombre}
+        <Btn activo={activo}>
+            {nombre}
         </Btn>   
     )
 

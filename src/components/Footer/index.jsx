@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="imagen">
                 <img src="./img/logo.png" alt="Logo"/>
             </div>
-            <p>Todos los Derechos Reservados - 2024 &copy;</p>
+            <p>&copy;Todos los Derechos Reservados - 2024</p>
             <p>Pagina desarrollado con fines academicos<br/>Por Alwin Huaman Vasquez</p>
         </PiePagina>
     )
