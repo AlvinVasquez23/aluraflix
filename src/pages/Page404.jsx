@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import GlobalStyles from "../components/GlobalStyles"
+import GlobalStyles from "../Styles/GlobalStyles"
 
 const NoFound = styled.body`
     background: black;

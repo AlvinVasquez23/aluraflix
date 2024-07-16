@@ -1,4 +1,4 @@
-import GlobalStyles from "../GlobalStyles"
+import GlobalStyles from "../../Styles/GlobalStyles"
 import styled from "styled-components"
 import Button from "../Boton"
 import { Link, useLocation } from "react-router-dom"
