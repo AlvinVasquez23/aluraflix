@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Form from "../components/Form";
 
 
-const ModalFormulario = styled.dialog`
+const ModalFormulario = styled.div`
     position: fixed;
     top:0;
     left:0;
@@ -12,15 +12,16 @@ const ModalFormulario = styled.dialog`
     display:flex;
     justify-content:center;
     align-items:center;
+    z-index:999;
  
 
 
 `
 
-const Modal = () => {
+const Modal = ({ onClose }) => {
     return(
-        <ModalFormulario open>
-            <Form/>
+        <ModalFormulario >
+            <Form onClose={onClose}/>
         </ModalFormulario>
     )
 };

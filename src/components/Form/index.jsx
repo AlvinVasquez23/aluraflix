@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../Boton"
+import React, { useState } from "react";
 
 const Formulario = styled.div`
     width: 40vw;
@@ -80,30 +81,70 @@ const Formulario = styled.div`
     }
 
 `
-const Form = () =>{
+const Form = ({ onClose }) =>{
+
+    const [titulo, setTitulo] = useState("");
+    const [categoria, setCategoria] = useState("");
+    const [imagen, setImagen] = useState("");
+    const [video, setVideo] = useState("");
+    const [descripcion, setDescripcion] = useState("");
+
+    const handleGuardar = (e) => {
+        e.preventDefault();
+        // Aquí podrías implementar la lógica para guardar los datos
+        console.log("Guardando datos:", { titulo, categoria, imagen, video, descripcion });
+        // Por ejemplo, podrías enviar los datos a una API, actualizar el estado global, etc.
+    };
+
+    const handleLimpiar = () => {
+        // Función para limpiar los campos del formulario
+        setTitulo("");
+        setCategoria("");
+        setImagen("");
+        setVideo("");
+        setDescripcion("");
+    };
+
     return (      
             <Formulario>
-                <img src="./img/X - cancel.png" alt="cancelar" />
+                <button onClick={onClose}><img src="./img/X - cancel.png" alt="cancelar" /></button>
                 <form>
                     <h1>Editar card:</h1>
                     <label>Título</label>
-                    <input className="info lineal" type="text" placeholder="¿qué es javascript?"/>
+                    <input className="info lineal"
+                    type="text"
+                    placeholder="¿Qué es JavaScript?"
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}/>
                     <label>Categoria</label>
-                    <select className="info lineal">
+                    <select className="info lineal"
+                    value={categoria}
+                    onChange={(e) => setCategoria(e.target.value)}>
                         <option></option>
-                        <option value="">Front End</option>
-                        <option value="">Back End</option>
-                        <option value="">Innovación y Gestión</option>
+                        <option value="Front End">Front End</option>
+                        <option value="Back End">Back End</option>
+                        <option value="Innovación y Gestión">Innovación y Gestión</option>
                     </select>
                     <label>Imagen</label>
-                    <input className="info lineal" type="url" placeholder="Colocar la url de la imagen"/>
+                    <input className="info lineal"
+                    type="text"
+                    placeholder="Colocar la URL de la imagen"
+                    value={imagen}
+                    onChange={(e) => setImagen(e.target.value)}/>
                     <label>Video</label>
-                    <input className="info lineal" type="url"  placeholder="Colocar la Url del video"/>
+                    <input className="info lineal"
+                    type="text"
+                    placeholder="Colocar la URL del video"
+                    value={video}
+                    onChange={(e) => setVideo(e.target.value)}/>
                     <label>Descripción</label>
-                    <textarea className="info" placeholder="Colocar una breve descripción"/>
+                    <textarea className="info"
+                    placeholder="Colocar una breve descripción"
+                    value={descripcion}
+                    onChange={(e) => setDescripcion(e.target.value)}/>
                     <div className="botones">   
-                        <Button nombre = "guardar"/>
-                        <Button nombre = "limpiar"/>
+                        <Button nombre = "guardar" onClick={handleGuardar}/>
+                        <Button nombre = "limpiar" onClick={handleLimpiar}/>
 
                     </div>
                 </form> 

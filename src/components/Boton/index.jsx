@@ -18,9 +18,18 @@ const Btn = styled.button`
 
 `
 
-const Button = ({nombre, activo=false})=> {
+const Button = ({nombre, activo=false,  onClick})=> {
+    const handleClick = (e) => {
+        e.preventDefault();
+        // Detiene la propagación del evento solo si el nombre es "limpiar"
+        if (nombre === "limpiar") {
+            e.stopPropagation();
+        }
+        onClick(e);
+    };
+
     return(
-        <Btn activo={activo}>
+        <Btn activo={activo} onClick={handleClick}>
             {nombre}
         </Btn>   
     )
