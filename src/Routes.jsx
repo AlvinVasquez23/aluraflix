@@ -10,9 +10,10 @@ const IndexRoutes = ()=>{
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>} />
-                {/* <Route path="NuevoVideo" element={<Modal/>} /> */}
+
                 <Route path="EditarVideo" element={<NuevoVideo/>} />
                 <Route path="*" element={<Page404/>} />
+                
             </Routes>      
         </BrowserRouter>
     )
